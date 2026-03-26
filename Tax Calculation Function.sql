@@ -1,16 +1,23 @@
--- 1. Function Definition
+-- 1. Function Definition with Progressive Logic
 CREATE OR REPLACE FUNCTION calculate_tax (p_salary IN NUMBER) 
 RETURN NUMBER 
 IS 
-    v_tax_rate CONSTANT NUMBER := 0.10;
+    v_tax_rate NUMBER;
 BEGIN
-    -- Validate the input salary to ensure data integrity
+    -- Ensure the salary is a valid positive number
     IF p_salary IS NULL OR p_salary < 0 THEN
-        -- Raise a custom application error for external programs to catch
         RAISE_APPLICATION_ERROR(-20001, 'Salary cannot be null or negative');
     END IF;
-
-    -- Return the calculated tax amount
+        
+    -- Applying Progressive Tax Brackets
+    IF p_salary <= 5000 THEN
+        v_tax_rate := 0.05;   -- 5% Rate
+    ELSIF p_salary <= 10000 THEN
+        v_tax_rate := 0.10;   -- 10% Rate
+    ELSE
+        v_tax_rate := 0.15;   -- 15% Rate
+    END IF;
+        
     RETURN p_salary * v_tax_rate;
 END;
 /
