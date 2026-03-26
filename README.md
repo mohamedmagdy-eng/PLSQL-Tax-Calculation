@@ -11,7 +11,7 @@ This project introduces a **Stored Function** designed to handle financial logic
 * **Exception Mapping:** Capturing specific `SQLCODE` within the execution block to provide user-friendly feedback.
 
 ### 📝 Logic Breakdown
-1. **Definition:** The function `calculate_tax` accepts a numeric parameter (`p_salary`).
+1. **Definition:** The function `calculate_tax` accepts a numeric parameter (`p_salary`) .
 2. **Validation Logic:** It first verifies that the input is valid. If the salary is negative or missing, it immediately halts and raises error `-20001`.
 3. **Calculation:** If the data is valid, it calculates a 10% tax rate using a declared constant.
 4. **Execution:** The accompanying anonymous block calls the function, handles the returned value, and maps any exceptions to clean console output.
