@@ -3,6 +3,25 @@
 ###  Project Overview
 This project features a robust **Stored Function** designed to automate income tax calculations based on progressive tax brackets. It demonstrates advanced conditional logic within Oracle PL/SQL to apply varying tax rates depending on the input salary, while ensuring strict data integrity through custom error handling.
 
+###   Features
+-**Progressive Tax Engine:** Implemented multi-tier tax brackets (5%, 10%, 15%) using optimized PL/SQL stored functions for accurate financial calculations.
+
+-**Input Validation:** Enforced validation checks for null and negative values to maintain data integrity and prevent calculation errors.
+
+-**Reusable Business Logic:** Designed modular and reusable PL/SQL components that can be integrated with Oracle Forms and reporting systems.
+
+-**Business Rule Implementation:** Applied structured financial logic aligned with payroll and taxation requirements.
+
+
+###  Technologies
+-**PL/SQL** (Stored Functions, Conditional Logic, Exception Handling)
+
+-**SQL** (Data Retrieval & Querying)
+
+-**Oracle Database Programming**
+
+-**Business Logic Automation**
+
 ### 🛠️ Technical Skillset
 * **Stored Functions:** Using `CREATE OR REPLACE FUNCTION` to encapsulate reusable business logic.
 * **Progressive Logic:** Implementing `IF-ELSIF-ELSE` structures to handle tiered financial brackets.
